@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Utilities for changing the display of elements.
+ *
+ * @package Utilities.
+ */
+
+@import "tools/visually-hidden";
+
+/* Visually hidden. */
+.u-visually-hidden {
+  @include visually-hidden;
+}
+
+/* Display. */
+.u-display {
+  &--flex {
+    display: flex !important;
+  }
+
+  &--block {
+    display: block !important;
+  }
+
+  &--none {
+    display: none !important;
+  }
+}

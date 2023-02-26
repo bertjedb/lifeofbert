@@ -1,0 +1,114 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * @package Templates.
+ */
+
+/* Import. */
+@import "settings/global";
+
+/* Layout. */
+.t-layout {
+  padding: $space-huge 0;
+  width: 100%;
+
+  &--small {
+    padding: $space-small 0;
+  }
+
+  &__section {
+    &--twocol,
+    &--threecol,
+    &--fourcol {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__region {
+    padding: 0 $space-huge;
+
+    & > div {
+      margin-bottom: $space-huge;
+    }
+
+    & h2 {
+      margin-bottom: $space-large;
+    }
+
+    .t-layout__section--twocol > &,
+    .t-layout__section--threecol > &,
+    .t-layout__section--fourcol > & {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: $width-small) {
+      /* stylelint-disable plugin/stylelint-bem-namics */
+
+      /* Two column layouts. */
+      .layout--twocol-section--50-50 > &--first,
+      .layout--twocol-section--50-50 > &--second {
+        flex: 0 1 50%;
+        max-width: 50%;
+      }
+
+      .layout--twocol-section--33-67 > &--first,
+      .layout--twocol-section--67-33 > &--second {
+        flex: 0 1 33%;
+        max-width: 33%;
+      }
+
+      .layout--twocol-section--33-67 > &--second,
+      .layout--twocol-section--67-33 > &--first {
+        flex: 0 1 67%;
+        max-width: 67%;
+      }
+
+      .layout--twocol-section--25-75 > &--first,
+      .layout--twocol-section--75-25 > &--second {
+        flex: 0 1 25%;
+        max-width: 25%;
+      }
+
+      .layout--twocol-section--25-75 > &--second,
+      .layout--twocol-section--75-25 > &--first {
+        flex: 0 1 75%;
+        max-width: 75%;
+      }
+
+      /* Three column layouts. */
+      .layout--threecol-section--25-50-25 > &--first,
+      .layout--threecol-section--25-50-25 > &--third,
+      .layout--threecol-section--25-25-50 > &--first,
+      .layout--threecol-section--25-25-50 > &--second,
+      .layout--threecol-section--50-25-25 > &--second,
+      .layout--threecol-section--50-25-25 > &--third {
+        flex: 0 1 25%;
+        max-width: 25%;
+      }
+
+      .layout--threecol-section--25-50-25 > &--second,
+      .layout--threecol-section--25-25-50 > &--third,
+      .layout--threecol-section--50-25-25 > &--first {
+        flex: 0 1 50%;
+        max-width: 50%;
+      }
+
+      .layout--threecol-section--33-34-33 > &--first,
+      .layout--threecol-section--33-34-33 > &--second,
+      .layout--threecol-section--33-34-33 > &--third {
+        flex: 0 1 calc(100% / 3);
+        max-width: calc(100% / 3);
+      }
+
+      /* Four columns layout. */
+      .t-layout__section--fourcol > & {
+        flex: 0 1 25%;
+        max-width: 25%;
+      }
+      /* stylelint-enable plugin/stylelint-bem-namics */
+    }
+  }
+}

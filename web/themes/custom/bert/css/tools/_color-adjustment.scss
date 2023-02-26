@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Color adjustment (Does not work with CSS-variables).
+ *
+ * @package Functions.
+ */
+
+/* Tint. */
+@function tint($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+/* Shade. */
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

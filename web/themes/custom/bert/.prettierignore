@@ -1,0 +1,10 @@
+# Ignore folders.
+assets
+dist
+node_modules
+templates
+translations
+
+# Ignore files.
+*.twig
+*.yml

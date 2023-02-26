@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Mixin for aspect ratio.
+ *
+ * @package Tools.
+ */
+
+/* Import. */
+@import "settings/global";
+
+/* Aspect ratio mixin. */
+@mixin aspect-ratio($x: 16, $y: 9) {
+  height: 0;
+  padding-bottom: calc((#{$y} / #{$x}) * 100%);
+  position: relative;
+}

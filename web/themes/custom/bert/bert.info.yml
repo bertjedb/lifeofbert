@@ -1,0 +1,33 @@
+name: Intranet theme
+type: theme
+description: 'Theme for intranet'
+core_version_requirement: ^9
+base theme: stable
+
+libraries:
+  - intranet/color
+  - intranet/global-styling
+
+regions:
+  header: Header
+  left_sidebar: Left sidebar
+  right_sidebar: Right sidebar
+  content: Content
+  footer: Footer
+  disabled: Disabled
+
+components:
+  namespaces:
+    components:
+      - patterns
+    atoms:
+      - patterns/atoms
+    molecules:
+      - patterns/molecules
+    organisms:
+      - patterns/organisms
+    templates:
+      - patterns/templates
+
+'interface translation project': intranet
+'interface translation server pattern': themes/custom/intranet/translations/%language.po

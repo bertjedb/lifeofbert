@@ -1,0 +1,61 @@
+extends: 'stylelint-config-standard-scss'
+ignoreFiles:
+  - 'node_modules/**/*'
+plugins:
+  - '@namics/stylelint-bem'
+  - 'stylelint-order'
+  - 'stylelint-scss'
+  - 'stylelint-prettier'
+rules:
+  # Prefixes are not allowed. We use Autoprefixer.
+  at-rule-no-unknown: null
+  at-rule-no-vendor-prefix: true
+
+  # Define nesting depth.
+  max-nesting-depth:
+    - 3
+    - ignore:
+      - 'pseudo-classes'
+      ignoreAtRules:
+      - 'include'
+
+  media-feature-name-no-vendor-prefix: true
+  no-descending-specificity: null
+  no-duplicate-selectors:
+  no-unknown-animations: true
+  number-leading-zero: always
+  declaration-colon-space-after: null
+  declaration-colon-newline-after: null
+
+  # Properties must sort alphabetical.
+  order/properties-alphabetical-order: true
+
+  # BEM convension.
+  plugin/stylelint-bem-namics:
+    patternPrefixes: ['h', 'm', 'o', 't', 'u']
+    helperPrefixes: []
+
+  property-no-unknown: null
+
+  # Allow scss @-rules.
+  scss/at-rule-no-unknown: true
+
+  # Temporary fix to use SASS 'rgba(#hex, 0.5)'.
+  color-function-notation: 'legacy'
+
+  # Selector options.
+  selector-max-id: 0
+  selector-max-class: 3
+  selector-max-type: 2
+  selector-max-specificity: '0,4,1'
+  selector-no-vendor-prefix: true
+  selector-attribute-quotes: 'always'
+  selector-class-pattern: '^([a-z][a-z0-9]*)((-{1,2}|_{1,2})[a-z0-9]+)*$'
+
+  # Force double quotes every where.
+  string-quotes: 'double'
+
+  value-no-vendor-prefix: true
+
+  # Use prettier.
+  prettier/prettier: true

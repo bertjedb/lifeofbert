@@ -1,0 +1,36 @@
+/**
+ * @file
+ * Utilities for flex.
+ *
+ * @package Utilities.
+ */
+
+@import "settings/global";
+
+/* Justify content. */
+.u-justify-content {
+  &--center {
+    justify-content: center !important;
+  }
+}
+
+/* Align items. */
+.u-align-items {
+  &--center {
+    align-items: center !important;
+  }
+}
+
+/* Wrap. */
+.u-flex-wrap {
+  &--wrap {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Direction. */
+.u-flex-direction {
+  &--column {
+    flex-direction: column !important;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "intranet",
+  "description": "Packages for Intranet theme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "@namics/stylelint-bem": "^8.0.0",
+    "@rollup/plugin-babel": "^6.0.2",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "clean-css-cli": "^5.5.0",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "glob": "^8.0.3",
+    "mkdirp": "^1.0.4",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^2.8.0",
+    "rollup": "^3.4.0",
+    "sass": "^1.56.1",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.0.1",
+    "terser": "^5.15.1"
+  },
+  "dependencies": {
+    "core-js": "^3.26.1",
+    "polyfill-library": "^4.5.0"
+  },
+  "scripts": {
+    "build": "npm-run-all --parallel js:build css:build",
+    "watch": "npm-run-all --parallel js:watch css:watch",
+    "lint": "npm-run-all --parallel js:lint css:lint",
+    "js:build": "npm-run-all js:compile js:minify",
+    "js:compile": "node --experimental-modules build/rollup.build.mjs",
+    "js:minify": "node --experimental-modules build/terser.minify.mjs",
+    "js:watch": "nodemon --watch js/ --watch patterns/ --ext js --exec 'npm run js:compile'",
+    "js:lint": "eslint '+(js|patterns)/**/*.js'",
+    "css:build": "npm-run-all css:compile css:postcss css:minify",
+    "css:compile": "sass css/:dist/css/ patterns/:dist/patterns/ --load-path=css",
+    "css:postcss": "postcss 'dist/**/*.css' --use autoprefixer --map --replace",
+    "css:minify": "cleancss --source-map --with-rebase --batch --batch-suffix '' 'dist/css/**/*.css'",
+    "css:watch": "nodemon --watch css/ --watch patterns/ --ext scss --exec 'npm-run-all css:compile css:postcss'",
+    "css:lint": "stylelint '+(css|patterns)/**/*.scss'"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie >= 0",
+    "not dead"
+  ]
+}

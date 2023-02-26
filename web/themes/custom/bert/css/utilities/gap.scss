@@ -1,0 +1,31 @@
+/**
+ * @file
+ * Utilities for gap.
+ *
+ * @package Utilities.
+ */
+
+@import "settings/global";
+
+/* Gap. */
+.u-gap {
+  &--tiny {
+    gap: $space-tiny !important;
+  }
+
+  &--small {
+    gap: $space-small !important;
+  }
+
+  &--medium {
+    gap: $space-base !important;
+  }
+
+  &--large {
+    gap: $space-large !important;
+  }
+
+  &--huge {
+    gap: $space-huge !important;
+  }
+}

@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Helper for spacing.
+ *
+ * @package Utilities.
+ */
+
+/* Import. */
+@import "settings/global";
+
+$sizes: (
+  collapse: 0,
+  tiny: $space-tiny,
+  small: $space-small,
+  medium: $space-base,
+  large: $space-large,
+  huge: $space-huge,
+);
+$list: (
+  m: "margin",
+  mb: "margin-bottom",
+  ml: "margin-left",
+  mr: "margin-right",
+  mt: "margin-top",
+  p: "padding",
+  pb: "padding-bottom",
+  pl: "padding-left",
+  pr: "padding-right",
+  pt: "padding-top",
+);
+
+/* stylelint-disable plugin/stylelint-bem-namics */
+@each $class, $property in $list {
+  .u-#{$class} {
+    @each $name, $size in $sizes {
+      &--#{$name} {
+        #{$property}: $size !important;
+      }
+    }
+  }
+}
+/* stylelint-enable plugin/stylelint-bem-namics */

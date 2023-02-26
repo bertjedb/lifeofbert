@@ -1,0 +1,55 @@
+global-styling:
+  css:
+    base:
+      # Generics.
+      dist/css/generics/fonts.css: { minified: true }
+      dist/css/generics/base.css: { minified: true }
+
+      # Atoms.
+      dist/patterns/molecules/accordion/accordion.css: { minified: true }
+      dist/patterns/molecules/card/card.css: { minified: true }
+      dist/patterns/atoms/form/form.css: { minified: true }
+      dist/patterns/atoms/heading/heading.css: { minified: true }
+      dist/patterns/atoms/image/image.css: { minified: true }
+      dist/patterns/atoms/link/link.css: { minified: true }
+      dist/patterns/molecules/list/list.css: { minified: true }
+      dist/patterns/atoms/table/table.css: { minified: true }
+      dist/patterns/molecules/tabs/tabs.css: { minified: true }
+      dist/patterns/atoms/thematic-break/thematic-break.css: { minified: true }
+
+      # Molecules.
+      dist/patterns/molecules/button/button.css: { minified: true }
+      dist/patterns/molecules/media/media.css: { minified: true }
+      dist/patterns/molecules/ordered-list/ordered-list.css: { minified: true }
+      dist/patterns/molecules/table/table.css: { minified: true }
+
+    layout:
+      # Templates.
+      dist/patterns/templates/container/container.css: { minified: true }
+      dist/patterns/templates/grid/grid.css: { minified: true }
+      dist/patterns/templates/layout/layout.css: { minified: true }
+      dist/patterns/templates/wrapper/wrapper.css: { minified: true }
+
+    theme:
+      # Organisms.
+      dist/patterns/organisms/footer/footer.css: { minified: true }
+      dist/patterns/organisms/header/header.css: { minified: true }
+      dist/patterns/organisms/main/main.css: { minified: true }
+
+      # Helpers.
+
+      # Utilities.
+      dist/css/utilities/background.css: { minified: true }
+      dist/css/utilities/display.css: { minified: true }
+      dist/css/utilities/flex/flex.css: { minified: true }
+      dist/css/utilities/gap/gap.css: { minified: true }
+      dist/css/utilities/spacing.css: { minified: true }
+      dist/css/utilities/text.css: { minified: true }
+
+  dependencies:
+    - core/drupal
+    - intranet/libraries.tabby
+
+# JavaScript
+
+# Molecules

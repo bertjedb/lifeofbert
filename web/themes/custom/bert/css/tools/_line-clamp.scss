@@ -1,0 +1,41 @@
+/**
+ * @file
+ * Mixin for to add an ellipsis after a multiline text.
+ *
+ * @package Tools.
+ */
+
+/* Import. */
+@import "settings/global";
+
+/* Multiline-ellipsis mixin. */
+@mixin line-clamp($lines: 3, $line-height: 1.5) {
+  overflow: hidden;
+
+  @if $lines == 1 {
+    // Limited to one line.
+    // Ellipsis will be displayed.
+    // Excellent browser support.
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @if $lines > 1 {
+    // Set max-height fallback, for browsers not supporting -webkit-line-clamp.
+    $max-height: #{$lines + " * (" + $line-height + ")"};
+
+    max-height: calc(#{$max-height});
+
+    @supports (-webkit-line-clamp: 1) {
+      // Not limited to one line.
+      // Ellipsis will be displayed.
+      // Not so good browser support.
+      /* stylelint-disable value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: $lines;
+      /* stylelint-enable value-no-vendor-prefix */
+      max-height: 100%; // Unset max-height fallback.
+    }
+  }
+}

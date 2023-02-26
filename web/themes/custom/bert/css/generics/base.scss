@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Base sass file.
+ */
+
+/* Import. */
+@import "settings/global";
+
+/* Set box-sizing. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* HTML. */
+html {
+  color: $color-default;
+  font-family: $font-family-default;
+  font-size: $font-size-small;
+  font-weight: $font-weight-base;
+  height: 100%;
+  line-height: $line-height-base;
+  scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
+
+  /* stylelint-disable */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  /* stylelint-enable */
+
+  @media screen and (min-width: $width-small) {
+    font-size: $font-size-base;
+  }
+}
+
+/* Body. */
+body {
+  height: 100%;
+  margin: 0;
+}

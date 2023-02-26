@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Grid tools.
+ *
+ * @package Tools.
+ */
+@import "settings/global";
+
+/* Basic grid, based on columns */
+@mixin grid(
+  $columns: 1,
+  $rows: auto,
+  $gutter: $gutter-base,
+  $align-x: normal,
+  $align-y: normal
+) {
+  align-items: $align-y;
+  display: grid;
+  grid-gap: $gutter;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: $rows;
+  justify-content: $align-x;
+}

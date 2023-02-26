@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Container styles.
+ *
+ * @package Templates.
+ */
+
+/* Import. */
+@import "settings/global";
+
+/* Container. */
+.t-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-huge;
+  padding: 0 calc($gutter-large / 2);
+  width: 100%;
+
+  /* Fluid. */
+  &--fluid {
+    max-width: none;
+  }
+
+  /* Small. */
+  &--small {
+    max-width: $width-small;
+  }
+}

@@ -1,0 +1,118 @@
+/**
+ * @file
+ * Global settings.
+ *
+ * @package Settings.
+ */
+
+/* Import modules. */
+@use "sass:map";
+
+/* Font family. */
+$font-family-default: "RO Sans", sans-serif;
+$font-family-heading: inherit;
+$font-family-logo: "RO Serif", "Times New Roman", times, serif;
+
+/* Font size. */
+$font-size-min-base: 16px;
+$font-size-max-base: 16px;
+$font-size-base: 1rem;
+$font-size-small: ($font-size-base * 0.875);
+$font-size-large: ($font-size-base * 1.125);
+
+/* Font size heading. */
+$font-size-h1: ($font-size-base * 2);
+$font-size-h2: ($font-size-base * 1.5);
+$font-size-h3: ($font-size-base * 1.125);
+$font-size-h4: ($font-size-base * 1);
+$font-size-h5: ($font-size-base * 1);
+$font-size-h6: ($font-size-base * 1);
+
+/* Font weight. */
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+
+/* Line height. */
+$line-height-base: 1.5;
+$line-height-tiny: 1.125;
+$line-height-small: 1.25;
+
+/* Basic colors. */
+$color-badge: var(--color-badge);
+$color-default: var(--color-default);
+$color-heading: var(--color-heading);
+$color-primary: var(--color-primary);
+$color-primary-light: var(--color-primary-light);
+$color-primary-lightest: var(--color-primary-lightest);
+$color-primary-dark: var(--color-primary-dark);
+$color-secondary: var(--color-secondary);
+$color-secondary-light: var(--color-secondary-light);
+$color-secondary-dark: var(--color-secondary-dark);
+$color-tertiary: var(--color-tertiary);
+$color-link: var(--color-link);
+$color-link-hover: var(--color-link-hover);
+
+/* Gray colors. */
+$color-gray: (
+  one: var(--color-gray-darkest),
+  two: var(--color-gray-darker),
+  three: var(--color-gray-dark),
+  four: var(--color-gray-normal),
+  five: var(--color-gray-light),
+  six: var(--color-gray-lighter),
+  seven: var(--color-gray-lightest),
+);
+
+/* Background colors. */
+$color-background: map.get(
+  $map: $color-gray,
+  $key: "four",
+);
+$color-background-light: map.get(
+  $map: $color-gray,
+  $key: "six",
+);
+$color-background-lighter: map.get(
+  $map: $color-gray,
+  $key: "seven",
+);
+$color-background-accent: var(--color-background-accent);
+
+/* Border color. */
+$color-border: map.get(
+  $map: $color-gray,
+  $key: "four",
+);
+
+/* Status colors. */
+$color-status: (
+  success: #155724,
+  warning: #856404,
+  danger: #721c24,
+);
+
+/* Spacing. */
+$space-base: $font-size-base;
+$space-tiny: ($space-base * 0.5);
+$space-small: ($space-base * 0.75);
+$space-large: ($space-base * 1.5);
+$space-huge: ($space-base * 2);
+
+/* Gutter. */
+$gutter-base: ($font-size-base * 2);
+$gutter-tiny: ($gutter-base * 0.25);
+$gutter-small: ($gutter-base * 0.5);
+$gutter-large: ($gutter-base * 2);
+
+/* Width. */
+$width-nano: 320px;
+$width-tiny: 560px;
+$width-small: 768px;
+$width-medium: 992px;
+$width-large: 1200px;
+$width-huge: 1440px;
+$width-base: $width-medium;
+
+/* Border radius. */
+$border-radius: 4px;

@@ -1,0 +1,77 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * @package Templates.
+ */
+
+/* Import. */
+@import "settings/global";
+@import "tools/grid";
+
+/* Grid. */
+.t-grid {
+  @include grid(1);
+
+  &__item {
+    min-width: 0;
+  }
+
+  &--halves {
+    @media screen and (min-width: $width-small) {
+      @include grid(2);
+    }
+
+    &-at-medium {
+      @media screen and (min-width: $width-medium) {
+        @include grid(2);
+      }
+    }
+  }
+
+  &--thirds {
+    @media screen and (min-width: $width-small) {
+      @include grid(2);
+    }
+
+    @media screen and (min-width: $width-large) {
+      @include grid(3);
+    }
+  }
+
+  &--fourths {
+    @media screen and (min-width: $width-small) {
+      @include grid(2);
+    }
+
+    @media screen and (min-width: $width-medium) {
+      @include grid(3);
+    }
+
+    @media screen and (min-width: $width-large) {
+      @include grid(4);
+    }
+  }
+
+  &__gap {
+    &--tiny {
+      grid-gap: $space-tiny !important;
+    }
+
+    &--small {
+      grid-gap: $space-small !important;
+    }
+
+    &--medium {
+      grid-gap: $space-base !important;
+    }
+
+    &--large {
+      grid-gap: $space-large !important;
+    }
+
+    &--huge {
+      grid-gap: $space-huge !important;
+    }
+  }
+}

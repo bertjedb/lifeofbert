@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Asset helper.
+ *
+ * @package Functions.
+ */
+
+/* Url builder for assets. */
+@function file($type, $file) {
+  @return url("../../../../../../assets/" + $type + "/" + $file);
+}
+
+/* Font asset helper. */
+@function font($file) {
+  @return file("fonts", $file);
+}

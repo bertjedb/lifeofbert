@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Mixin for masking.
+ *
+ * @package Tools.
+ */
+
+/* Masking mixin. */
+@mixin mask($url, $position: center) {
+  background-color: currentcolor;
+  mask-image: url("../../../../assets/icons/" + #{$url});
+  mask-position: #{$position};
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}

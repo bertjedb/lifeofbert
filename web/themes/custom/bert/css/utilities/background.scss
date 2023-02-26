@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Utilities for changing the background.
+ *
+ * @package Utilities.
+ */
+
+/* Import. */
+@use "sass:map";
+@import "settings/global";
+
+/* Background color. */
+.u-background-color {
+  &--light {
+    background-color: $color-background-light;
+  }
+
+  &--lighter {
+    background-color: map.get($color-gray, "seven");
+  }
+}
